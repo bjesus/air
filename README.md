@@ -20,7 +20,7 @@ You can use any Linux application with it, for example:
 
 AIR isn't nicely packed as it's actually just a collection of different tools, together with an AwesomeWM configuration. Setting up takes a couple of steps:
 
-0. `cd ~/.config && git clone git@github.com:bjesus/air.git awesome`
+0. `cd ~/.config && git clone https://github.com/bjesus/air.git awesome`
 
 1. Install all needed packages: `sudo apk add awesome util-linux-misc svkbd lisgd network-manager-applet pm-utils brightnessctl upower gnome-icon-theme font-inter`
 
