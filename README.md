@@ -43,6 +43,17 @@ YOUR_USERNAME ALL=NOPASSWD: /sbin/poweroff
 
 7. `chmod +x ~/.config/awesome/suspend.sh`
 
+8. Rotate the touchscreen by create /etc/X11/xorg.conf.d/rotate.conf with this:
+```
+Section "InputClass"
+            Identifier "Coordinate Transformation Matrix"
+            MatchIsTouchscreen "on"
+            MatchDevicePath "/dev/input/event*"
+            MatchDriver "libinput"
+            Option "CalibrationMatrix" "0 -1 1 1 0 0 0 0 1"
+EndSection
+```
+
 ## Usage
 
 The menu on the bottom left is where you can launch your applications. By default it uses Foliate, Firefox, Castor and St. The bottom right has a gears icon that opens the Settings modal. You can set brightness using it, toggle the WIFI and restart. The keyboard icon toggles the keyboard.
