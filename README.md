@@ -56,7 +56,7 @@ AIR uses lisgd for gestures. By default the following gestures are set:
 
 ## Known issues
 
-- Rotation doesn't work - it's easy to rotate but the touchscreen freezes
+- Rotation is buggy - generally the moment the screen is rotated, it freezes. AIR runs `watch -n 0.5 xset dpms force on` to force a screen refresh every 0.5 seconds.
 - Battery status reporting is off
-- GTK header buttons are still tiny. Can be fixed by setting `GDK_SCALE` but for me it crashes Foliate.
+- GTK header buttons are tiny. Can be fixed by setting `GDK_SCALE` but for me it crashes Foliate.
 - Suspend doesn't work on first attempt
