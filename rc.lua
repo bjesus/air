@@ -784,7 +784,7 @@ end)
 awful.spawn("killall svkbd-mobile-intl")
 awful.spawn("killall lisgd")
 awful.spawn.once("nm-applet")
-awful.spawn.once("xrandr --output None-0 --rotate left")
+awful.spawn.once("xrandr --output None-1 --rotate left")
 awful.spawn.once("watch -n 0.5 xset dpms force on")
 awful.spawn.once("svkbd-mobile-intl")
 awful.spawn.once(
