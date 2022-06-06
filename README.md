@@ -1,6 +1,6 @@
 # Awesome Interface for e-Readers
 
-![AIR screenshot](https://host.yoavmoshe.com/store/kobo.jpg)
+![AIR screenshot](https://user-images.githubusercontent.com/55081/172224765-9f0efab0-f555-45b5-a053-186d2300373a.png)
 
 AIR is an graphical interface for e-readers that heavily relies on AwesomeWM. It's tested on the Kobo Clara HD using PostmarketOS, but perhaps it can be used elsewhere. It is a work in progress.
 
