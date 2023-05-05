@@ -13,7 +13,7 @@ AIR is an graphical interface for e-readers that heavily relies on AwesomeWM. It
 - On screen keyboard
 
 You can use any Linux application with it, for example:
-- Foliate for ebooks
+- KOReader or Foliate for ebooks
 - Firefox for (slow) web
 - Castor for Gopher and Gemini
 - St for terminal
@@ -57,6 +57,24 @@ Section "InputClass"
 EndSection
 ```
 
+### KOReader
+
+The only way I managed to run KOReader is using a Debian chroot. Get the Debian package from [KOReader releases page](https://github.com/koreader/koreader/releases). Creating the chroot is pretty simple:
+
+```
+sudo apk add debootstrap xhost
+$ sudo debootstrap  testing ~/debian http://http.debian.net/debian/
+$ cp koreader-2023.04-armhf.deb ~/chroot/root 
+$ mkdir -p ~/chroot/tmp/.X11-unix
+$ sudo chroot ~/chroot /bin/bash
+
+# inside the chroot:
+$ apt update && apt install libsdl2-2.0-0 fonts-noto-hinted fonts-droid-fallback 
+$ sudo dpkg -i /root/koreader-2023.03-armhf.deb
+```
+
+You should now be able to use the koreader.sh script to launch KOReader.
+
 ## Usage
 
 The menu on the bottom left is where you can launch your applications. By default it uses Foliate, Firefox, Castor and St. The bottom right has a gears icon that opens the Settings modal. You can set brightness using it, toggle the WIFI and restart. The keyboard icon toggles the keyboard.
@@ -69,8 +87,6 @@ AIR uses lisgd for gestures. By default the following gestures are set:
 - Sliding down from the top right shows window controls for the currently focused window (useful for killing an app)
 
 ## Known issues
-
-- Rotation is buggy - generally the moment the screen is rotated, it freezes. AIR runs `watch -n 0.5 xset dpms force on` to force a screen refresh every 0.5 seconds.
 - Battery status reporting is off
 - GTK header buttons are tiny. Can be fixed by setting `GDK_SCALE` but for me it crashes Foliate.
-- Suspend doesn't work on first attempt
+
