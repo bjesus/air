@@ -275,7 +275,7 @@ mysystemmenu = {
 }
 mymainmenu = awful.menu({
   items = {
-    { "Books", "foliate" },
+    { "Books", gears.filesystem.get_configuration_dir() .. "koreader.sh" },
     { "WWW", "firefox" },
     { "Gopher", "castor" },
     { "Terminal", terminal },
@@ -283,7 +283,7 @@ mymainmenu = awful.menu({
   },
 })
 
-mylauncher = awful.widget.launcher({ image = "/usr/share/icons/gnome/48x48/actions/go-up.png", menu = mymainmenu })
+mylauncher = awful.widget.launcher({ image = "/usr/share/icons/Adwaita/symbolic/actions/go-up-symbolic.svg", menu = mymainmenu })
 
 kbdtoggler = awful.widget.button({
   image = gears.filesystem.get_configuration_dir() .. "keyboard.svg",
@@ -297,7 +297,7 @@ kbdtoggler:connect_signal("button::press", function(c, _, _, button)
 end)
 
 poptoggler = awful.widget.button({
-  image = "/usr/share/icons/gnome/48x48/categories/applications-system.png",
+  image = "/usr/share/icons/Adwaita/symbolic/categories/applications-system-symbolic.svg",
   buttons = {
     awful.button({}, 1, nil, function() end),
   },
@@ -785,7 +785,6 @@ awful.spawn("killall svkbd-mobile-intl")
 awful.spawn("killall lisgd")
 awful.spawn.once("nm-applet")
 awful.spawn.once("xrandr --output None-1 --rotate left")
-awful.spawn.once("watch -n 0.5 xset dpms force on")
 awful.spawn.once("svkbd-mobile-intl")
 awful.spawn.once(
   'lisgd -g "1,DU,B,*,R,awesome-client \'awesome.emit_signal(\\"keyboard::toggle\\")\'" -g "1,UD,TR,*,R,awesome-client \'awesome.emit_signal(\\"client::titlebars\\")\'" -g "1,UD,TL,*,R,awesome-client \'pop.visible = not pop.visible\'"'
