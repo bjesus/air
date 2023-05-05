@@ -24,7 +24,7 @@ AIR isn't nicely packed as it's actually just a collection of different tools, t
 
 0. `cd ~/.config && git clone https://github.com/bjesus/air.git awesome`
 
-1. Install all needed packages: `sudo apk add awesome util-linux-misc svkbd lisgd network-manager-applet pm-utils brightnessctl upower gnome-icon-theme font-inter`
+1. Install all needed packages: `sudo apk add awesome util-linux-misc svkbd lisgd network-manager-applet pm-utils brightnessctl upower adwaita-icon-theme font-inter xrandr`
 
 2. If you want, install the additional optional software: `sudo apk add foliate castor mobile-config-firefox sxmo-st`
 
@@ -37,6 +37,9 @@ AIR isn't nicely packed as it's actually just a collection of different tools, t
 YOUR_USERNAME ALL=NOPASSWD: /usr/sbin/rfkill
 YOUR_USERNAME ALL=NOPASSWD: /usr/sbin/pm-suspend
 YOUR_USERNAME ALL=NOPASSWD: /sbin/poweroff
+YOUR_USERNAME ALL=NOPASSWD: /usr/sbin/chroot
+YOUR_USERNAME ALL=NOPASSWD: /bin/mount
+YOUR_USERNAME ALL=NOPASSWD: /usr/bin/tee
 ```
 
 6. Set some font-size optimizations by copying `~/.config/awesome/.Xresources` to `~/.Xresources` and `~/.config/awesome/settings.ini` to `~/.config/gtk-3.0/settings.ini`
