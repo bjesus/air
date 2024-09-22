@@ -784,7 +784,7 @@ end)
 awful.spawn("killall svkbd-mobile-intl")
 awful.spawn("killall lisgd")
 awful.spawn.once("nm-applet")
-awful.spawn.once("xrandr --output None-1 --rotate left")
+awful.spawn.with_shell("sleep 3 && xrandr --output None-1 --rotate left")
 awful.spawn.once("svkbd-mobile-intl")
 awful.spawn.once(
   'lisgd -g "1,DU,B,*,R,awesome-client \'awesome.emit_signal(\\"keyboard::toggle\\")\'" -g "1,UD,TR,*,R,awesome-client \'awesome.emit_signal(\\"client::titlebars\\")\'" -g "1,UD,TL,*,R,awesome-client \'pop.visible = not pop.visible\'"'
