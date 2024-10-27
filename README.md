@@ -46,11 +46,11 @@ YOUR_USERNAME ALL=NOPASSWD: /bin/mount
 YOUR_USERNAME ALL=NOPASSWD: /usr/bin/tee
 ```
 
-6. Set some font-size optimizations by copying `~/.config/awesome/.Xresources` to `~/.Xresources` and `~/.config/awesome/settings.ini` to `~/.config/gtk-3.0/settings.ini`
+6. Set some font-size optimizations by copying `~/.config/awesome/.Xresources` to `~/.Xresources`, and `~/.config/awesome/settings.ini` to `~/.config/gtk-3.0/settings.ini`
 
 7. `chmod +x ~/.config/awesome/suspend.sh`
 
-8. Rotate the touchscreen by create /etc/X11/xorg.conf.d/rotate.conf with this:
+8. Rotate the touchscreen by creating /etc/X11/xorg.conf.d/rotate.conf with this content:
 ```
 Section "InputClass"
             Identifier "Coordinate Transformation Matrix"
@@ -58,6 +58,11 @@ Section "InputClass"
             MatchDevicePath "/dev/input/event*"
             MatchDriver "libinput"
             Option "CalibrationMatrix" "0 -1 1 1 0 0 0 0 1"
+EndSection
+
+Section "Monitor"
+        Identifier "None-1"
+        Option "Rotate" "left"
 EndSection
 ```
 
